@@ -3,6 +3,8 @@ import '../node_modules/bootswatch/dist/yeti/bootstrap.css';
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import FilterableTable from './components/FilterableTable/FilterableTable';
+import CreateForm from './components/CreateForm/CreateForm';
 
 function App() {
   return (
@@ -21,10 +23,10 @@ function App() {
         ]}
       />
       <Routes>
-        <Route path='/' />
-        <Route path='/proverbs' />
-        <Route path='/proverbs/:id' />
-        <Route path='/proverbs/create' />
+        <Route path='/' element={<FilterableTable />} />
+        <Route path='/proverbs' element={<FilterableTable />} />
+        {/* <Route path='/proverbs/:id' /> */}
+        <Route path='/proverbs/create' element={<CreateForm />} />
       </Routes>
       <Footer />
     </div>
