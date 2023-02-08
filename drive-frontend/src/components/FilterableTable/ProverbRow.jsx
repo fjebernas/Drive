@@ -1,14 +1,13 @@
-import { useNavigate } from "react-router-dom";
-
 function ProverbRow(props) {
-  const navigate = useNavigate();
-
   return (
-    <tr onClick={() => navigate(`/proverbs/edit/${props.id}`)}>
-      <td>{props.id}</td>
-      <td>{props.content}</td>
-      <td>{props.country}</td>
-    </tr>
+    <figure className="text-center mt-3">
+      <blockquote className="blockquote">
+        <p>{props.content}</p>
+        <figcaption className="blockquote-footer">
+          <cite title="source-title">{props.country}</cite>
+        </figcaption>
+      </blockquote>
+    </figure>
   );
 }
 

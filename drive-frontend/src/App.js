@@ -1,5 +1,6 @@
 import './App.css';
-import '../node_modules/bootswatch/dist/yeti/bootstrap.css';
+//import '../node_modules/bootswatch/dist/yeti/bootstrap.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -7,29 +8,33 @@ import FilterableTable from './components/FilterableTable/FilterableTable';
 import CreateProverbForm from './components/CreateProverbForm/CreateProverbForm';
 import EditProverbForm from './components/EditProverbForm/EditProverbForm';
 
+const appName = 'Drive';
+const navItems = [
+  {
+    name: 'Proverbs',
+    url: '/proverbs'
+  },
+  {
+    name: 'Add',
+    url: '/proverbs/create'
+  },
+];
+
 function App() {
   return (
-    <div className="App">
-      <Header
-        title='Drive'
-        navItems={[
-          {
-            name: 'Proverbs',
-            url: '/proverbs'
-          },
-          {
-            name: 'Add',
-            url: '/proverbs/create'
-          },
-        ]}
+    <div className="App vh-100 d-flex flex-column">
+      <Header appName={appName} navItems={navItems}/>
+      <div className='my-4'>
+        <Routes>
+          <Route path='/' element={<FilterableTable />} />
+          <Route path='/proverbs' element={<FilterableTable />} />
+          <Route path='/proverbs/create' element={<CreateProverbForm />} />
+          <Route path='/proverbs/edit/:id' element={<EditProverbForm />} />
+        </Routes>
+      </div>
+      <Footer
+        appName={appName}
       />
-      <Routes>
-        <Route path='/' element={<FilterableTable />} />
-        <Route path='/proverbs' element={<FilterableTable />} />
-        <Route path='/proverbs/create' element={<CreateProverbForm />} />
-        <Route path='/proverbs/edit/:id' element={<EditProverbForm />} />
-      </Routes>
-      <Footer />
     </div>
   );
 }
