@@ -37,12 +37,12 @@ function CreateProverbForm() {
             <div className="card-body">
               <form>
                 <InputTextArea
-                  name='Proverb'
+                  name='proverb'
                   rowSize={3}
                   onChange={handleContentChange}
                 />
                 <InputText
-                  name='Country'
+                  name='country'
                   onChange={handleCountryChange}
                 />
                 <button

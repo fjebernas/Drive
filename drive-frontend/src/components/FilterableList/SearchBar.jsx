@@ -5,7 +5,7 @@ function SearchBar() {
         <input
           type="search"
           id="search" 
-          className="form-control"
+          className="form-control rounded-0 rounded-start"
           placeholder="Key word ..."
         />
       </div>

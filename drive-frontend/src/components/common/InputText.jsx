@@ -8,7 +8,7 @@ function InputText(props) {
     <div className="mb-3 d-flex flex-column">
       <label
         htmlFor={props.name}
-        className="form-label align-self-start"
+        className="form-label align-self-start text-capitalize"
       >
         {props.name}
       </label>

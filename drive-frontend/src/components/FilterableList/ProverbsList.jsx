@@ -7,7 +7,7 @@ function ProverbsList(props) {
         props.proverbs.length > 0 ?
           props.proverbs.map(proverb => (
             <li key={proverb.id} className="list-group-item">
-              <ProverbRow content={proverb.content} country={proverb.country} />
+              <ProverbRow id={proverb.id} content={proverb.content} country={proverb.country} />
             </li>
           )) : (
             <li className="list-group-item">

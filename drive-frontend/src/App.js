@@ -4,7 +4,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import FilterableTable from './components/FilterableTable/FilterableTable';
+import FilterableList from './components/FilterableList/FilterableList';
 import CreateProverbForm from './components/CreateProverbForm/CreateProverbForm';
 import EditProverbForm from './components/EditProverbForm/EditProverbForm';
 
@@ -26,8 +26,8 @@ function App() {
       <Header appName={appName} navItems={navItems}/>
       <div className='my-4'>
         <Routes>
-          <Route path='/' element={<FilterableTable />} />
-          <Route path='/proverbs' element={<FilterableTable />} />
+          <Route path='/' element={<FilterableList />} />
+          <Route path='/proverbs' element={<FilterableList />} />
           <Route path='/proverbs/create' element={<CreateProverbForm />} />
           <Route path='/proverbs/edit/:id' element={<EditProverbForm />} />
         </Routes>
