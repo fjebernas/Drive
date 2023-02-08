@@ -3,7 +3,7 @@ import ProverbRow from "./ProverbRow";
 function ProverbsList(props) {
 
   const filteredProverbs = props.proverbs.reduce((result, proverb) => {
-    proverb.content.indexOf(props.filterText) > -1 && result.push(proverb);
+    proverb.content.toLowerCase().indexOf(props.filterText.toLowerCase()) > -1 && result.push(proverb);
     return result;
   }, []);
 

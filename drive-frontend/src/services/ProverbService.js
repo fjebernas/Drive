@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = 'http://192.168.1.99:8080/api/drive';
+const API_BASE_URL = 'http://192.168.1.99:8080/drive/v1';
 
 class ProverbService {
 
