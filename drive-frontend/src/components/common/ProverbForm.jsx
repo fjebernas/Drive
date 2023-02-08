@@ -1,12 +1,8 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import proverbService from "../../services/ProverbService";
+import { useEffect, useState } from "react";
 import InputText from "./InputText";
 import InputTextArea from "./InputTextArea";
 
-function CreateForm() {
-
-  const navigate = useNavigate();
+function ProverbForm(props) {
 
   const [data, setData] = useState({
     content: '',
@@ -23,12 +19,7 @@ function CreateForm() {
 
   const handleClick = (e) => {
     e.preventDefault();
-    proverbService.store({...data})
-      .then(res => {
-        console.log('store success');
-        navigate('/proverbs');
-      })
-      .catch(err => console.error(err));
+    props.onSubmit({...data});
   }
 
   return (
@@ -36,7 +27,7 @@ function CreateForm() {
       <div className="row">
         <div className="col-md-6 offset-md-3">
           <div className="card">
-            <h5 className="card-header">Add Proverb</h5>
+            <h5 className="card-header">{props.formName}</h5>
             <div className="card-body">
               <form>
                 <div className="mb-3">
@@ -57,7 +48,7 @@ function CreateForm() {
                   className=" btn btn-lg btn-primary w-100"
                   onClick={handleClick}
                 >
-                  Submit
+                  {props.buttonName}
                 </button>
               </form>
             </div>
@@ -68,4 +59,4 @@ function CreateForm() {
   );
 }
 
-export default CreateForm;
+export default ProverbForm;

@@ -8,8 +8,16 @@ class ProverbService {
     return axios.get(`${API_BASE_URL}/proverbs/`);
   }
 
+  getById(id) {
+    return axios.get(`${API_BASE_URL}/proverbs/${id}`);
+  }
+
   store(newProverb) {
     return axios.post(`${API_BASE_URL}/proverbs/`, newProverb);
+  }
+
+  update(id, updatedProverb) {
+    return axios.put(`${API_BASE_URL}/proverbs/${id}`, updatedProverb);
   }
 
 }

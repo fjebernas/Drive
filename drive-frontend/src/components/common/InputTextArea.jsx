@@ -5,10 +5,10 @@ function InputTextArea(props) {
   }
 
   return (
-    <>
+    <div className="mb-3 d-flex flex-column">
       <label
         htmlFor={props.name}
-        className="form-label"
+        className="form-label align-self-start"
       >
         {props.name}
       </label>
@@ -19,8 +19,9 @@ function InputTextArea(props) {
         className="form-control"
         placeholder='e.g. The quick brown fox jumps over the lazy dog.'
         onChange={handleChange}
+        value={props.value}
       />
-    </>
+    </div>
   );
 }
 

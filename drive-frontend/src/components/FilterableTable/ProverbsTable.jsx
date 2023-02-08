@@ -1,4 +1,7 @@
+import ProverbRow from "./ProverbRow";
+
 function ProverbsTable(props) {
+
   return (
     <div className="table-responsive">
       <table className="table table-striped table-hover text-center align-middle text-nowrap">
@@ -13,11 +16,12 @@ function ProverbsTable(props) {
           {
             props.proverbs.length > 0 ?
             props.proverbs.map(proverb => (
-              <tr key={proverb.id}>
-                <td>{proverb.id}</td>
-                <td>{proverb.content}</td>
-                <td>{proverb.country}</td>
-              </tr>
+              <ProverbRow
+                key={proverb.id}
+                id={proverb.id}
+                content={proverb.content}
+                country={proverb.country}
+              />
             )) : (
               <tr>
                 <td
