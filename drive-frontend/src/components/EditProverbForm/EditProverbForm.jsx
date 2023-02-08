@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import proverbService from "../../services/ProverbService";
 import InputText from "../common/InputText";
 import InputTextArea from "../common/InputTextArea";
+import DeleteButton from "./DeleteButton";
 
 function EditProverbForm() {
 
@@ -52,13 +53,24 @@ function EditProverbForm() {
                   onChange={handleCountryChange}
                   value={proverb.country}
                 />
-                <button
-                  type="button"
-                  className=" btn btn-lg btn-primary w-100"
-                  onClick={handleClick}
-                >
-                  Update
-                </button>
+                <div className="container-fluid">
+                  <div className="row">
+                    <div className="col-8">
+                      <button
+                        type="button"
+                        className=" btn btn-warning w-100"
+                        onClick={handleClick}
+                      >
+                        Update
+                      </button>
+                    </div>
+                    <div className="col-4">
+                      <DeleteButton
+                        id={id}
+                      />
+                    </div>
+                  </div>
+                </div>
               </form>
             </div>
           </div>

@@ -16,6 +16,10 @@ class ProverbService {
     return axios.post(`${API_BASE_URL}/proverbs/`, newProverb);
   }
 
+  destroy(id) {
+    return axios.delete(`${API_BASE_URL}/proverbs/${id}`);
+  }
+
   update(id, updatedProverb) {
     return axios.put(`${API_BASE_URL}/proverbs/${id}`, updatedProverb);
   }

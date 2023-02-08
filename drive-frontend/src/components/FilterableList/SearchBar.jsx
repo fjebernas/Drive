@@ -1,17 +1,20 @@
-function SearchBar() {
+function SearchBar(props) {
+
+  const handleChange = (e) => {
+    props.handleChange(e.target.value);
+  }
+
   return (
     <div className="input-group">
-      <div className="form-outline w-75">
+      <div className="form-outline w-100">
         <input
           type="search"
           id="search" 
           className="form-control rounded-0 rounded-start"
-          placeholder="Key word ..."
+          placeholder="Type to filter proverbs ..."
+          onChange={handleChange}
         />
       </div>
-      <button type="button" className="btn btn-info w-25">
-        Search
-      </button>
     </div>
   );
 }

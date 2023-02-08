@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 @CrossOrigin
 @RequestMapping("${serverBaseUrl}/proverbs")
@@ -22,8 +21,7 @@ public class ProverbController {
 
   @ResponseStatus(HttpStatus.OK)
   @GetMapping("/")
-  List<Proverb> getAll() throws InterruptedException {
-    TimeUnit.MILLISECONDS.sleep(1000);
+  List<Proverb> getAll() {
     return proverbService.getAll();
   }
 
