@@ -20,6 +20,7 @@ function InputText(props) {
         placeholder='e.g. The World.'
         onChange={handleChange}
         value={props.value}
+        autoComplete='off'
       />
     </div>
   );

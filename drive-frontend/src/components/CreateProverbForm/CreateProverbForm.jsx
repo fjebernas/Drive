@@ -22,7 +22,8 @@ function CreateProverbForm() {
     setProverb({...proverb, country: value});
   }
 
-  const handleClick = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     proverbService.store(proverb)
       .then(() => navigate('/'))
       .catch(err => console.error(err));
@@ -35,7 +36,7 @@ function CreateProverbForm() {
           <div className="card">
             <h5 className="card-header">Add Proverb</h5>
             <div className="card-body">
-              <form>
+              <form onSubmit={handleSubmit}>
                 <InputTextArea
                   name='proverb'
                   rowSize={3}
@@ -46,9 +47,8 @@ function CreateProverbForm() {
                   onChange={handleCountryChange}
                 />
                 <button
-                  type="button"
+                  type="submit"
                   className=" btn btn-lg btn-primary w-100"
-                  onClick={handleClick}
                 >
                   Submit
                 </button>

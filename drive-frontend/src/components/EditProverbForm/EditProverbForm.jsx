@@ -45,7 +45,8 @@ function EditProverbForm() {
     setProverb({...proverb, country: value});
   }
 
-  const handleClick = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     proverbService.update(id, proverb)
       .then(() => navigate('/'))
       .catch(err => console.error(err));
@@ -58,7 +59,7 @@ function EditProverbForm() {
           <div className="card">
             <h5 className="card-header">Edit Proverb</h5>
             <div className="card-body">
-              <form>
+              <form onSubmit={handleSubmit}>
                 { isError && (<div className="alert alert-danger" role='alert'>An error occurred.</div>) }
                 {
                   isLoading ? (
@@ -127,9 +128,8 @@ function EditProverbForm() {
                         <div className="row">
                           <div className="col-8">
                             <button
-                              type="button"
+                              type="submit"
                               className=" btn btn-warning w-100"
-                              onClick={handleClick}
                             >
                               Update
                             </button>

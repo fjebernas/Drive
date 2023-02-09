@@ -13,6 +13,7 @@ function SearchBar(props) {
           className="form-control rounded-0 rounded-start"
           placeholder="Type to filter proverbs ..."
           onChange={handleChange}
+          autoComplete='off'
         />
       </div>
     </div>
