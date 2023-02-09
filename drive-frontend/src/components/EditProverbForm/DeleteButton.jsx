@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import proverbService from "../../services/ProverbService";
+import { NotificationManager } from 'react-notifications';
 
 function DeleteButton(props) {
 
@@ -7,7 +8,10 @@ function DeleteButton(props) {
 
   const handleClick = () => {
     proverbService.destroy(props.id)
-      .then(() => navigate('/'))
+      .then(() => {
+        navigate('/');
+        NotificationManager.info('Deleted proverb!', 'Successful!', 2000);
+      })
       .catch(err => {
         console.error(err);
       });

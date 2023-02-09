@@ -4,6 +4,7 @@ import proverbService from "../../services/ProverbService";
 import InputText from "../common/InputText";
 import InputTextArea from "../common/InputTextArea";
 import DeleteButton from "./DeleteButton";
+import { NotificationManager } from 'react-notifications';
 
 function EditProverbForm() {
 
@@ -48,8 +49,14 @@ function EditProverbForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     proverbService.update(id, proverb)
-      .then(() => navigate('/'))
-      .catch(err => console.error(err));
+      .then(() => {
+        navigate('/');
+        NotificationManager.info('Updated proverb!', 'Successful!', 2000);
+      })
+      .catch(err => {
+        console.error(err);
+        NotificationManager.error(`Can't update proverb`, 'Something went wrong.', 2000);
+      });
   }
 
   return (

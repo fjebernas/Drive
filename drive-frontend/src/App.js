@@ -7,6 +7,8 @@ import Footer from './components/Footer/Footer';
 import FilterableList from './components/FilterableList/FilterableList';
 import CreateProverbForm from './components/CreateProverbForm/CreateProverbForm';
 import EditProverbForm from './components/EditProverbForm/EditProverbForm';
+import { NotificationContainer } from 'react-notifications';
+import '../node_modules/react-notifications/dist/react-notifications.css';
 
 const appName = 'Drive';
 const navItems = [
@@ -31,6 +33,7 @@ function App() {
           <Route path='/proverbs/create' element={<CreateProverbForm />} />
           <Route path='/proverbs/edit/:id' element={<EditProverbForm />} />
         </Routes>
+        <NotificationContainer />
       </div>
       <Footer
         appName={appName}
