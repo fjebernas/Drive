@@ -10,7 +10,7 @@ public interface ProverbService {
 
   Proverb getById(Long id);
 
-  Proverb store(Proverb proverb);
+  Proverb store(Proverb proverb) throws Exception;
 
   void destroy(Long id);
 

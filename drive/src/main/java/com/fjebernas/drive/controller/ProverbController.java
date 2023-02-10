@@ -33,7 +33,7 @@ public class ProverbController {
 
   @ResponseStatus(HttpStatus.CREATED)
   @PostMapping("/")
-  Proverb store(@Valid @RequestBody Proverb proverb) {
+  Proverb store(@Valid @RequestBody Proverb proverb) throws Exception {
     return proverbService.store(proverb);
   }
 
@@ -45,7 +45,7 @@ public class ProverbController {
 
   @ResponseStatus(HttpStatus.OK)
   @PutMapping("/{id}")
-  Proverb update(@PathVariable Long id, @RequestBody Proverb updatedProverb) {
+  Proverb update(@PathVariable Long id, @RequestBody Proverb updatedProverb) throws Exception {
     Proverb existingProverb = proverbService.getById(id);
     existingProverb.setContent(updatedProverb.getContent());
     existingProverb.setCountry(updatedProverb.getCountry());

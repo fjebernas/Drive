@@ -1,27 +1,26 @@
 import axios from "axios";
-
-const API_BASE_URL = 'http://192.168.1.99:8080/drive/v1';
+import { properties as p } from "../data/properties";
 
 class ProverbService {
 
   getAll() {
-    return axios.get(`${API_BASE_URL}/proverbs/`);
+    return axios.get(`${p.API_BASE_URL}/proverbs/`);
   }
 
   getById(id) {
-    return axios.get(`${API_BASE_URL}/proverbs/${id}`);
+    return axios.get(`${p.API_BASE_URL}/proverbs/${id}`);
   }
 
   store(newProverb) {
-    return axios.post(`${API_BASE_URL}/proverbs/`, newProverb);
+    return axios.post(`${p.API_BASE_URL}/proverbs/`, newProverb);
   }
 
   destroy(id) {
-    return axios.delete(`${API_BASE_URL}/proverbs/${id}`);
+    return axios.delete(`${p.API_BASE_URL}/proverbs/${id}`);
   }
 
   update(id, updatedProverb) {
-    return axios.put(`${API_BASE_URL}/proverbs/${id}`, updatedProverb);
+    return axios.put(`${p.API_BASE_URL}/proverbs/${id}`, updatedProverb);
   }
 
 }

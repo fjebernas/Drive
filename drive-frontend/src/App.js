@@ -9,8 +9,9 @@ import CreateProverbForm from './components/CreateProverbForm/CreateProverbForm'
 import EditProverbForm from './components/EditProverbForm/EditProverbForm';
 import { NotificationContainer } from 'react-notifications';
 import '../node_modules/react-notifications/dist/react-notifications.css';
+import ScrollToTop from 'react-scroll-to-top';
+import { properties as p } from './data/properties';
 
-const appName = 'Drive';
 const navItems = [
   {
     name: 'Proverbs',
@@ -25,7 +26,7 @@ const navItems = [
 function App() {
   return (
     <div className="App vh-100 d-flex flex-column">
-      <Header appName={appName} navItems={navItems}/>
+      <Header appName={p.APP_NAME} navItems={navItems}/>
       <div className='my-4'>
         <Routes>
           <Route path='/' element={<FilterableList />} />
@@ -33,10 +34,11 @@ function App() {
           <Route path='/proverbs/create' element={<CreateProverbForm />} />
           <Route path='/proverbs/edit/:id' element={<EditProverbForm />} />
         </Routes>
+        <ScrollToTop />
         <NotificationContainer />
       </div>
       <Footer
-        appName={appName}
+        appName={p.APP_NAME}
       />
     </div>
   );
