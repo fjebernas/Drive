@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import proverbService from "../../services/ProverbService";
-import InputText from "../common/InputText";
-import InputTextArea from "../common/InputTextArea";
+import { InputText, InputTextArea } from "../common";
 import DeleteButton from "./DeleteButton";
 import { NotificationManager } from 'react-notifications';
 

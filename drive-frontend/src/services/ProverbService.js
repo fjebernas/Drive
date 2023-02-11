@@ -23,6 +23,10 @@ class ProverbService {
     return axios.put(`${p.API_BASE_URL}/proverbs/${id}`, updatedProverb);
   }
 
+  getAllCountries() {
+    return axios.get(`${p.API_BASE_URL}/proverbs/countries`);
+  }
+
 }
 
 const proverbService = new ProverbService();

@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import proverbService from "../../services/ProverbService";
-import InputText from "../common/InputText";
-import InputTextArea from "../common/InputTextArea";
+import { InputText, InputTextArea } from "../common";
 import { NotificationManager } from 'react-notifications';
 
 
