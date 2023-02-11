@@ -40,16 +40,14 @@ function FilterableList() {
         </div>
       </div>
       <div className="row mt-4">
-        <div className="col-md-6 offset-md-3">
-          <h5 className="fst-italic text-muted fw-light">Showing {proverbs.length} proverbs</h5>
-        </div>
-      </div>
-      <div className="row">
         <div className="col">
           { isError && (<div className="alert alert-danger" role='alert'>An error occurred.</div>) }
           {
-            isLoading ? <p className="fst-italic text-muted text-center mt-4">Loading ...</p>
-                      : <ProverbsList proverbs={proverbs} filterText={filterText} />
+            isLoading ? (
+              <div className="spinner-border text-primary" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </div>
+            ) : <ProverbsList proverbs={proverbs} filterText={filterText} />
           }
         </div>
       </div>
