@@ -2,6 +2,7 @@ package com.fjebernas.drive.service;
 
 import com.fjebernas.drive.model.Proverb;
 
+import java.util.HashSet;
 import java.util.List;
 
 public interface ProverbService {
@@ -14,4 +15,5 @@ public interface ProverbService {
 
   void destroy(Long id);
 
+  HashSet<String> getAllCountries();
 }

@@ -6,6 +6,7 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashSet;
 import java.util.List;
 
 @CrossOrigin
@@ -50,5 +51,11 @@ public class ProverbController {
     existingProverb.setContent(updatedProverb.getContent());
     existingProverb.setCountry(updatedProverb.getCountry());
     return proverbService.store(existingProverb);
+  }
+
+  @ResponseStatus(HttpStatus.OK)
+  @GetMapping("/countries")
+  HashSet<String> getAllCountries() {
+    return proverbService.getAllCountries();
   }
 }

@@ -5,6 +5,7 @@ import com.fjebernas.drive.repository.ProverbRepository;
 import com.fjebernas.drive.service.ProverbService;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.List;
 
 @Service
@@ -38,5 +39,13 @@ public class ProverbServiceImpl implements ProverbService {
   @Override
   public void destroy(Long id) {
     proverbRepository.deleteById(id);
+  }
+
+  @Override
+  public HashSet<String> getAllCountries() {
+    List<Proverb> proverbs = proverbRepository.findAll();
+    HashSet<String> countries = new HashSet<>();
+    proverbs.forEach(proverb -> countries.add(proverb.getCountry()));
+    return countries;
   }
 }
