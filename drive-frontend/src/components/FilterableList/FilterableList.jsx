@@ -37,24 +37,27 @@ function FilterableList() {
 
   return (
     <div className="container mt-2">
-      <RandomProverb />
-      <div className="row mt-3">
-        <div className="col-md-6 offset-md-3">
-          <SearchBar handleChange={handleFilterTextChange} />
-        </div>
-      </div>
-      <div className="row mt-4">
-        <div className="col">
-          { isError && (<div className="alert alert-danger" role='alert'>An error occurred.</div>) }
-          {
-            isLoading ? (
-              <div className="spinner-border text-primary" role="status">
-                <span className="visually-hidden">Loading...</span>
+      { isError && (<div className="alert alert-danger" role='alert'>An error occurred.</div>) }
+      {
+        isLoading ? (
+          <div className="spinner-border text-primary" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        ) : (
+          <>
+            <div className="row mt-3">
+              <div className="col-md-6 offset-md-3">
+                <SearchBar handleChange={handleFilterTextChange} />
               </div>
-            ) : <ProverbsList proverbs={proverbs} filterText={filterText} />
-          }
-        </div>
-      </div>
+            </div>
+            <div className="row mt-4">
+              <div className="col">
+                <ProverbsList proverbs={proverbs} filterText={filterText} />
+              </div>
+            </div>
+          </>
+        )
+      }
     </div>
   );
 }

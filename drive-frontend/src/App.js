@@ -13,6 +13,7 @@ import '../node_modules/react-notifications/dist/react-notifications.css';
 import ScrollToTop from 'react-scroll-to-top';
 import { properties as p } from './data/properties';
 import Statistics from './components/Statistics';
+import MainSection from './components/MainSection/MainSection';
 
 const navItems = [
   {
@@ -35,8 +36,8 @@ function App() {
       <Header appName={p.APP_NAME} navItems={navItems}/>
       <div className='my-4'>
         <Routes>
-          <Route path='/' element={<FilterableList />} />
-          <Route path='/proverbs' element={<FilterableList />} />
+          <Route path='/' element={<MainSection />} />
+          <Route path='/proverbs' element={<MainSection />} />
           <Route path='/proverbs/create' element={<CreateProverbForm />} />
           <Route path='/proverbs/edit/:id' element={<EditProverbForm />} />
           <Route path='/proverbs/statistics' element={<Statistics />} />

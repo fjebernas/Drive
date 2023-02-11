@@ -8,30 +8,34 @@ function RandomProverb() {
   const [isError, setIsError] = useState(false);
 
   useEffect(() => {
-    setIsError(false);
-    setIsLoading(true);
-
-    proverbService.getRandomProverb()
-    .then(res => {
-      setRandomProverb(res.data);
-    }).catch(err => {
-      setIsError(true);
-      console.error(err);
-    });
-
-    setIsLoading(false);
+    const getRandomProverb = async () => {
+      setIsError(false);
+      setIsLoading(true);
+  
+      await proverbService.getRandomProverb()
+      .then(res => {
+        setRandomProverb(res.data);
+      }).catch(err => {
+        setIsError(true);
+        console.error(err);
+      });
+  
+      setIsLoading(false);
+    }
+    
+    getRandomProverb();
   }, []);
 
   return (
-    <>
+    <div className="container mt-2 mb-5">
       { isError && (<div className="alert alert-danger" role='alert'>An error occurred.</div>) }
       {
         isLoading ? (
-          <div className="spinner-border text-primary" role="status">
+          <div className="spinner-border text-info mt-5" role="status">
             <span className="visually-hidden">Loading...</span>
           </div>
         ) : (
-          <figure className="text-center mt-2 mb-5">
+          <figure className="text-center">
             <blockquote className="blockquote">
               <h1 className="text-dark fs-1 py-3 fw-light">
                 {randomProverb.content}
@@ -43,7 +47,7 @@ function RandomProverb() {
           </figure>
         )
       }
-    </>
+    </div>
   );
 }
 

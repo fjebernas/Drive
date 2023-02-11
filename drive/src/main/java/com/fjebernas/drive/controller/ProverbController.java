@@ -63,7 +63,8 @@ public class ProverbController {
 
   @ResponseStatus(HttpStatus.OK)
   @GetMapping("/random")
-  Proverb getRandomProverb() {
+  Proverb getRandomProverb() throws InterruptedException {
+    TimeUnit.MILLISECONDS.sleep(500);
     return proverbService.getRandomProverb();
   }
 }
