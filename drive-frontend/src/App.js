@@ -2,11 +2,11 @@ import './App.css';
 //import '../node_modules/bootswatch/dist/yeti/bootstrap.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import { Route, Routes } from 'react-router-dom';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import FilterableList from './components/FilterableList/FilterableList';
-import CreateProverbForm from './components/CreateProverbForm/CreateProverbForm';
-import EditProverbForm from './components/EditProverbForm/EditProverbForm';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import FilterableList from './components/FilterableList';
+import CreateProverbForm from './components/CreateProverbForm';
+import EditProverbForm from './components/EditProverbForm';
 import { NotificationContainer } from 'react-notifications';
 import '../node_modules/react-notifications/dist/react-notifications.css';
 import ScrollToTop from 'react-scroll-to-top';

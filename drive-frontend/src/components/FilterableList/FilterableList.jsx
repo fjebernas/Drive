@@ -3,7 +3,7 @@ import proverbService from "../../services/ProverbService";
 import ProverbsList from "./ProverbsList";
 import SearchBar from "./SearchBar";
 
-function FilterableTable() {
+function FilterableList() {
   const [proverbs, setProverbs] = useState([]);
   const [filterText, setFilterText] = useState('');
 
@@ -40,6 +40,11 @@ function FilterableTable() {
         </div>
       </div>
       <div className="row mt-4">
+        <div className="col-md-6 offset-md-3">
+          <h5 className="fst-italic text-muted fw-light">Showing {proverbs.length} proverbs</h5>
+        </div>
+      </div>
+      <div className="row">
         <div className="col">
           { isError && (<div className="alert alert-danger" role='alert'>An error occurred.</div>) }
           {
@@ -52,4 +57,4 @@ function FilterableTable() {
   );
 }
 
-export default FilterableTable;
+export default FilterableList;
