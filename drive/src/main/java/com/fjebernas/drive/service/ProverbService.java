@@ -16,4 +16,6 @@ public interface ProverbService {
   void destroy(Long id);
 
   HashSet<String> getAllCountries();
+
+  Proverb getRandomProverb();
 }

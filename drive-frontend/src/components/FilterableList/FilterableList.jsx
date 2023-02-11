@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import proverbService from "../../services/ProverbService";
+import RandomProverb from "../RandomProverb/RandomProverb";
 import ProverbsList from "./ProverbsList";
 import SearchBar from "./SearchBar";
 
@@ -16,7 +17,9 @@ function FilterableList() {
       setIsLoading(true);
   
       await proverbService.getAll()
-        .then(res => {setProverbs(res.data)})
+        .then(res => {
+          setProverbs(res.data);
+        })
         .catch(err => {
           setIsError(true);
           console.log(err);
@@ -34,7 +37,8 @@ function FilterableList() {
 
   return (
     <div className="container mt-2">
-      <div className="row">
+      <RandomProverb />
+      <div className="row mt-3">
         <div className="col-md-6 offset-md-3">
           <SearchBar handleChange={handleFilterTextChange} />
         </div>

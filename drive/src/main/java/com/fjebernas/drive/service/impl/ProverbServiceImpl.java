@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class ProverbServiceImpl implements ProverbService {
@@ -47,5 +48,11 @@ public class ProverbServiceImpl implements ProverbService {
     HashSet<String> countries = new HashSet<>();
     proverbs.forEach(proverb -> countries.add(proverb.getCountry()));
     return countries;
+  }
+
+  @Override
+  public Proverb getRandomProverb() {
+    List<Proverb> proverbs = proverbRepository.findAll();
+    return proverbs.get(new Random().nextInt(proverbs.size()));
   }
 }

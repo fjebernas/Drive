@@ -9,7 +9,7 @@ function ProverbsList(props) {
 
   return (
     <ul className="list-group list-group-flush">
-      <h5 className="fst-italic text-muted fw-light">Showing {props.proverbs.length} proverbs</h5>
+      <h5 className="fst-italic text-muted fw-light">Showing {filteredProverbs.length} proverbs</h5>
       {
         filteredProverbs.length > 0 ?
         filteredProverbs

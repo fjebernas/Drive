@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @CrossOrigin
 @RequestMapping("${serverBaseUrl}/proverbs")
@@ -22,7 +23,8 @@ public class ProverbController {
 
   @ResponseStatus(HttpStatus.OK)
   @GetMapping("/")
-  List<Proverb> getAll() {
+  List<Proverb> getAll() throws InterruptedException {
+    TimeUnit.MILLISECONDS.sleep(1000);
     return proverbService.getAll();
   }
 
@@ -57,5 +59,11 @@ public class ProverbController {
   @GetMapping("/countries")
   HashSet<String> getAllCountries() {
     return proverbService.getAllCountries();
+  }
+
+  @ResponseStatus(HttpStatus.OK)
+  @GetMapping("/random")
+  Proverb getRandomProverb() {
+    return proverbService.getRandomProverb();
   }
 }

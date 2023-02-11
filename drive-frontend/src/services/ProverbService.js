@@ -27,6 +27,10 @@ class ProverbService {
     return axios.get(`${p.API_BASE_URL}/proverbs/countries`);
   }
 
+  getRandomProverb() {
+    return axios.get(`${p.API_BASE_URL}/proverbs/random`);
+  }
+
 }
 
 const proverbService = new ProverbService();
