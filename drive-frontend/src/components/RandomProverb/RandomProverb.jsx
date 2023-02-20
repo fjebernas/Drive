@@ -31,7 +31,7 @@ function RandomProverb() {
       { isError && (<div className="alert alert-danger" role='alert'>An error occurred.</div>) }
       {
         isLoading ? (
-          <div className="spinner-border text-info mt-5" role="status">
+          <div className="spinner-border text-primary mt-5" role="status">
             <span className="visually-hidden">Loading...</span>
           </div>
         ) : (

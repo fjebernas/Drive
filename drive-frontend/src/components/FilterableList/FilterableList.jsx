@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import proverbService from "../../services/ProverbService";
-import RandomProverb from "../RandomProverb/RandomProverb";
 import ProverbsList from "./ProverbsList";
 import SearchBar from "./SearchBar";
 
@@ -40,7 +39,7 @@ function FilterableList() {
       { isError && (<div className="alert alert-danger" role='alert'>An error occurred.</div>) }
       {
         isLoading ? (
-          <div className="spinner-border text-primary" role="status">
+          <div className="spinner-border text-info" role="status">
             <span className="visually-hidden">Loading...</span>
           </div>
         ) : (
