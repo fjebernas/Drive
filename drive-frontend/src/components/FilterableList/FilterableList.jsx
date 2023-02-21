@@ -38,6 +38,12 @@ function FilterableList() {
     getProverbs();
   }
 
+  const handleShowOnlyFavoritesButtonClick = (e) => {
+    e.preventDefault();
+    const favoriteProverbs = proverbs.filter(proverb => proverb.favorite);
+    setProverbs(favoriteProverbs);
+  }
+
   return (
     <div className="container mt-2">
       { isError && (<div className="alert alert-danger" role='alert'>An error occurred.</div>) }
@@ -51,6 +57,7 @@ function FilterableList() {
             <div className="row mt-3">
               <div className="col-md-6 offset-md-3">
                 <SearchBar handleChange={handleFilterTextChange} />
+                <button className="mt-2 btn btn-link text-info" onClick={handleShowOnlyFavoritesButtonClick}>Show only favorites</button>
               </div>
             </div>
             <div className="row mt-4">
