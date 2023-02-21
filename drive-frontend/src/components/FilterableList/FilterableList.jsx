@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import proverbService from "../../services/ProverbService";
 import ProverbsList from "./ProverbsList";
 import SearchBar from "./SearchBar";
+import ShowOnlyFavoritesToggler from "./ShowOnlyFavoritesToggler";
 
 function FilterableList() {
   const [proverbs, setProverbs] = useState([]);
@@ -9,6 +10,8 @@ function FilterableList() {
 
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+
+  const [isShowingFavoritesOnly, setIsShowingFavoritesOnly] = useState(false);
 
   const getProverbs = async () => {
     setIsError(false);
@@ -38,10 +41,8 @@ function FilterableList() {
     getProverbs();
   }
 
-  const handleShowOnlyFavoritesButtonClick = (e) => {
-    e.preventDefault();
-    const favoriteProverbs = proverbs.filter(proverb => proverb.favorite);
-    setProverbs(favoriteProverbs);
+  const handleTogglerChange = () => {
+    setIsShowingFavoritesOnly(!isShowingFavoritesOnly);
   }
 
   return (
@@ -57,12 +58,12 @@ function FilterableList() {
             <div className="row mt-3">
               <div className="col-md-6 offset-md-3">
                 <SearchBar handleChange={handleFilterTextChange} />
-                <button className="mt-2 btn btn-link text-info" onClick={handleShowOnlyFavoritesButtonClick}>Show only favorites</button>
+                <ShowOnlyFavoritesToggler handleTogglerChange={handleTogglerChange} />
               </div>
             </div>
             <div className="row mt-4">
               <div className="col">
-                <ProverbsList proverbs={proverbs} filterText={filterText} handleFavoriteButtonClick={handleFavoriteButtonClick} />
+                <ProverbsList proverbs={isShowingFavoritesOnly ? proverbs.filter(proverb => proverb.favorite) : proverbs} filterText={filterText} handleFavoriteButtonClick={handleFavoriteButtonClick} />
               </div>
             </div>
           </>

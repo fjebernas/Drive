@@ -1,10 +1,7 @@
-import { useNavigate } from "react-router-dom";
 import proverbService from "../../services/ProverbService";
 import { NotificationManager } from 'react-notifications';
 
 function FavoriteButton(props) {
-
-  const navigate = useNavigate();
 
   const handleClick = (e) => {
     e.preventDefault();
