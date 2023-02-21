@@ -1,5 +1,6 @@
 import proverbService from "../../services/ProverbService";
 import { NotificationManager } from 'react-notifications';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function FavoriteButton(props) {
 
@@ -38,11 +39,14 @@ function FavoriteButton(props) {
   }
 
   const getButtonCssClasses = () => {
-    return props.proverb.favorite ? 'btn btn-warning' : 'btn btn-outline-warning';
+    const defaultClasses = 'position-absolute bottom-50 end-0 d-xxl-block d-none border-0';
+    return props.proverb.favorite ? `${defaultClasses} btn btn-outline-warning` : `${defaultClasses} btn btn-outline-secondary`;
   }
 
   return (
-    <button type="button" className={getButtonCssClasses()} onClick={handleClick}>Favorite</button>
+    <button type="button" className={getButtonCssClasses()} onClick={handleClick}>
+      <FontAwesomeIcon icon='star' size="xl" />
+    </button>
   );
 }
 

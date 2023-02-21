@@ -13,6 +13,8 @@ import ScrollToTop from 'react-scroll-to-top';
 import { properties as p } from './data/properties';
 import Statistics from './components/Statistics';
 import MainSection from './components/MainSection';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faShuffle, faStar } from '@fortawesome/free-solid-svg-icons';
 
 const navItems = [
   {
@@ -30,6 +32,9 @@ const navItems = [
 ];
 
 function App() {
+
+  library.add(faShuffle, faStar);
+
   return (
     <div className="App vh-100 d-flex flex-column">
       <Header appName={p.APP_NAME} navItems={navItems}/>

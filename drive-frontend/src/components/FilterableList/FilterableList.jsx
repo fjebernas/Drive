@@ -20,6 +20,7 @@ function FilterableList() {
     await proverbService.getAll()
       .then(res => {
         setProverbs(res.data);
+        setIsShowingFavoritesOnly(false);
       })
       .catch(err => {
         setIsError(true);
@@ -63,7 +64,11 @@ function FilterableList() {
             </div>
             <div className="row mt-4">
               <div className="col">
-                <ProverbsList proverbs={isShowingFavoritesOnly ? proverbs.filter(proverb => proverb.favorite) : proverbs} filterText={filterText} handleFavoriteButtonClick={handleFavoriteButtonClick} />
+                <ProverbsList
+                  proverbs={isShowingFavoritesOnly ? proverbs.filter(proverb => proverb.favorite) : proverbs}
+                  filterText={filterText}
+                  handleFavoriteButtonClick={handleFavoriteButtonClick}
+                />
               </div>
             </div>
           </>

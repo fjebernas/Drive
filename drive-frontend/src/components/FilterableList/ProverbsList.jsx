@@ -1,3 +1,4 @@
+import FavoriteButton from "./FavoriteButton";
 import ProverbRow from "./ProverbRow";
 
 function ProverbsList(props) {
@@ -14,8 +15,9 @@ function ProverbsList(props) {
         filteredProverbs.length > 0 ?
         filteredProverbs
           .map(proverb => (
-            <li key={proverb.id} className="list-group-item">
-              <ProverbRow proverb={proverb} handleFavoriteButtonClick={props.handleFavoriteButtonClick} />
+            <li key={proverb.id} className="list-group-item position-relative">
+              <ProverbRow proverb={proverb} />
+              <FavoriteButton proverb={proverb} handleFavoriteButtonClick={props.handleFavoriteButtonClick} />
             </li>
           ))
           : (

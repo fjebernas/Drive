@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import FavoriteButton from "./FavoriteButton";
 
 function ProverbRow(props) {
 
@@ -24,7 +23,7 @@ function ProverbRow(props) {
           <cite title="source-title">{props.proverb.country}</cite>
         </figcaption>
       </blockquote>
-      <FavoriteButton proverb={props.proverb} handleFavoriteButtonClick={props.handleFavoriteButtonClick} />
+      
     </figure>
   );
 }

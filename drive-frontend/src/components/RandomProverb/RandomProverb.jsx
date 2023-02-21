@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import proverbService from "../../services/ProverbService";
 
@@ -7,27 +8,27 @@ function RandomProverb() {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
+  const getRandomProverb = async () => {
+    setIsError(false);
+    setIsLoading(true);
+
+    await proverbService.getRandomProverb()
+    .then(res => {
+      setRandomProverb(res.data);
+    }).catch(err => {
+      setIsError(true);
+      console.error(err);
+    });
+
+    setIsLoading(false);
+  }
+
   useEffect(() => {
-    const getRandomProverb = async () => {
-      setIsError(false);
-      setIsLoading(true);
-  
-      await proverbService.getRandomProverb()
-      .then(res => {
-        setRandomProverb(res.data);
-      }).catch(err => {
-        setIsError(true);
-        console.error(err);
-      });
-  
-      setIsLoading(false);
-    }
-    
     getRandomProverb();
   }, []);
 
   return (
-    <div className="container mt-2 mb-5">
+    <div className="container mt-4 mb-5">
       { isError && (<div className="alert alert-danger" role='alert'>An error occurred.</div>) }
       {
         isLoading ? (
@@ -35,7 +36,7 @@ function RandomProverb() {
             <span className="visually-hidden">Loading...</span>
           </div>
         ) : (
-          <figure className="text-center">
+          <figure className="text-center position-relative">
             <blockquote className="blockquote">
               <h1 className="text-dark fs-1 py-3 fw-light">
                 {randomProverb.content}
@@ -44,6 +45,12 @@ function RandomProverb() {
                 <cite title="source-title">{randomProverb.country}</cite>
               </figcaption>
             </blockquote>
+            <button
+              className="btn btn-sm btn-outline-success position-absolute top-0 start-50 translate-middle border-0"
+              onClick={getRandomProverb}
+            >
+              <FontAwesomeIcon icon='shuffle' size="xl" />
+            </button>
           </figure>
         )
       }
