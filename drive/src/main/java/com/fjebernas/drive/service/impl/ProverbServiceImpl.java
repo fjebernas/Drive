@@ -53,6 +53,7 @@ public class ProverbServiceImpl implements ProverbService {
   @Override
   public Proverb getRandomProverb() {
     List<Proverb> proverbs = proverbRepository.findAll();
-    return proverbs.get(new Random().nextInt(proverbs.size()));
+    return proverbs.size() > 0 ? proverbs.get(new Random().nextInt(proverbs.size()))
+          : new Proverb();
   }
 }

@@ -19,12 +19,10 @@ public class Proverb {
   @Column(name = "country", nullable = false)
   private String country;
 
-  public Proverb() {
-  }
+  @Column(name = "is_favorite", columnDefinition = "boolean default false", nullable = false)
+  private Boolean isFavorite;
 
-  public Proverb(String content, String country) {
-    this.content = content;
-    this.country = country;
+  public Proverb() {
   }
 
   public Long getId() {
@@ -49,5 +47,13 @@ public class Proverb {
 
   public void setCountry(String country) {
     this.country = country;
+  }
+
+  public Boolean getFavorite() {
+    return isFavorite;
+  }
+
+  public void setFavorite(Boolean favorite) {
+    isFavorite = favorite;
   }
 }
