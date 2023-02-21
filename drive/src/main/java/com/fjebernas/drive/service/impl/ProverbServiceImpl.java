@@ -30,11 +30,13 @@ public class ProverbServiceImpl implements ProverbService {
 
   @Override
   public Proverb store(Proverb proverb) throws Exception {
-    if (proverbRepository.existsProverbByContent(proverb.getContent())) {
-      throw new Exception("Proverb with content: \"" + proverb.getContent() + "\" already exists.");
-    } else {
-      return proverbRepository.save(proverb);
-    }
+//    if (proverbRepository.existsProverbByContent(proverb.getContent())) {
+//      throw new Exception("Proverb with content: \"" + proverb.getContent() + "\" already exists.");
+//    } else {
+//      return proverbRepository.save(proverb);
+//    }
+
+    return proverbRepository.save(proverb);
   }
 
   @Override

@@ -52,6 +52,7 @@ public class ProverbController {
     Proverb existingProverb = proverbService.getById(id);
     existingProverb.setContent(updatedProverb.getContent());
     existingProverb.setCountry(updatedProverb.getCountry());
+    existingProverb.setFavorite(updatedProverb.getFavorite());
     return proverbService.store(existingProverb);
   }
 

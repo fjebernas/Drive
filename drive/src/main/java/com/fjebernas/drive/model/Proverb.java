@@ -19,8 +19,8 @@ public class Proverb {
   @Column(name = "country", nullable = false)
   private String country;
 
-  @Column(name = "is_favorite", columnDefinition = "boolean default false", nullable = false)
-  private Boolean isFavorite;
+  @Column(name = "favorite", nullable = false)
+  private Boolean favorite = false;
 
   public Proverb() {
   }
@@ -50,10 +50,10 @@ public class Proverb {
   }
 
   public Boolean getFavorite() {
-    return isFavorite;
+    return favorite;
   }
 
   public void setFavorite(Boolean favorite) {
-    isFavorite = favorite;
+    this.favorite = favorite;
   }
 }

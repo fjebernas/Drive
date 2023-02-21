@@ -10,28 +10,32 @@ function FilterableList() {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
-  useEffect(() => {
-    const getProverbs = async () => {
-      setIsError(false);
-      setIsLoading(true);
-  
-      await proverbService.getAll()
-        .then(res => {
-          setProverbs(res.data);
-        })
-        .catch(err => {
-          setIsError(true);
-          console.log(err);
-        });
-  
-      setIsLoading(false);
-    }
+  const getProverbs = async () => {
+    setIsError(false);
+    setIsLoading(true);
 
+    await proverbService.getAll()
+      .then(res => {
+        setProverbs(res.data);
+      })
+      .catch(err => {
+        setIsError(true);
+        console.log(err);
+      });
+
+    setIsLoading(false);
+  }
+
+  useEffect(() => {
     getProverbs();
   }, []);
 
   const handleFilterTextChange = (text) => {
     setFilterText(text);
+  }
+
+  const handleFavoriteButtonClick = () => {
+    getProverbs();
   }
 
   return (
@@ -51,7 +55,7 @@ function FilterableList() {
             </div>
             <div className="row mt-4">
               <div className="col">
-                <ProverbsList proverbs={proverbs} filterText={filterText} />
+                <ProverbsList proverbs={proverbs} filterText={filterText} handleFavoriteButtonClick={handleFavoriteButtonClick} />
               </div>
             </div>
           </>

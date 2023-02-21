@@ -13,16 +13,16 @@ function ProverbsList(props) {
       {
         filteredProverbs.length > 0 ?
         filteredProverbs
-        .map(proverb => (
-          <li key={proverb.id} className="list-group-item">
-            <ProverbRow id={proverb.id} content={proverb.content} country={proverb.country} />
-          </li>
-        ))
-        : (
-          <li className="list-group-item">
-            <p className="fst-italic text-muted text-center mt-4">Nothing to show</p>
-          </li>
-        )
+          .map(proverb => (
+            <li key={proverb.id} className="list-group-item">
+              <ProverbRow proverb={proverb} handleFavoriteButtonClick={props.handleFavoriteButtonClick} />
+            </li>
+          ))
+          : (
+            <li className="list-group-item">
+              <p className="fst-italic text-muted text-center mt-4">Nothing to show</p>
+            </li>
+          )
       }
     </ul>
   );
