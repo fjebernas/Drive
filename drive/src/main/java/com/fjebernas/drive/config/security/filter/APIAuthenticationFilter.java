@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
+import java.util.List;
 
 @Slf4j
 @AllArgsConstructor
@@ -32,7 +33,10 @@ public class APIAuthenticationFilter extends OncePerRequestFilter {
 
     String keyRequest = request.getHeader("x-api-key");
 
-    APIAuthenticationRequest authenticationRequest = new APIAuthenticationRequest(false, keyRequest);
+    APIAuthenticationRequest authenticationRequest = new APIAuthenticationRequest(
+            false,
+            keyRequest,
+            List.of());
 
     Authentication authentication = apiAuthenticationManager.authenticate(authenticationRequest);
 

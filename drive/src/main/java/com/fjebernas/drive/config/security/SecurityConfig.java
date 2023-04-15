@@ -4,6 +4,7 @@ import com.fjebernas.drive.config.security.filter.APIAuthenticationFilter;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
@@ -25,10 +26,12 @@ public class SecurityConfig {
             .and()
             .csrf(AbstractHttpConfigurer::disable)
             .addFilterAt(apiAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
-            .authorizeHttpRequests()
-            .anyRequest()
-            .authenticated()
-            .and()
+            .authorizeHttpRequests(auth -> auth
+                    .requestMatchers(HttpMethod.GET)
+                      .hasAnyAuthority("read", "all")
+                    .anyRequest()
+                      .hasAuthority("all")
+            )
             .build();
   }
 
