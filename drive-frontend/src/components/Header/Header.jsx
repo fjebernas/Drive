@@ -11,7 +11,7 @@ function Header(props) {
   return (
     <nav className="navbar bg-dark navbar-dark">
       <div className="container justify-content-center flex-column">
-        <button className="navbar-brand d-block fs-1 fw-light text-primary btn btn-link text-center m-0" type="button">
+        <button className="navbar-brand d-block fs-1 fw-light text-info btn btn-link text-center m-0" type="button">
           {props.appName}
         </button>
         <ul className="navbar-nav flex-row fs-5">

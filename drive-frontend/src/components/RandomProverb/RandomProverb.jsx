@@ -32,7 +32,7 @@ function RandomProverb() {
       { isError && (<div className="alert alert-danger" role='alert'>An error occurred.</div>) }
       {
         isLoading ? (
-          <div className="spinner-border text-primary mt-5" role="status">
+          <div className="spinner-grow text-primary mt-5" role="status">
             <span className="visually-hidden">Loading...</span>
           </div>
         ) : (
@@ -42,14 +42,14 @@ function RandomProverb() {
                 {randomProverb.content}
               </h1>
               <figcaption className="blockquote-footer">
-                <cite title="source-title">{randomProverb.country}</cite>
+                <cite title="Country">{randomProverb.country}</cite>
               </figcaption>
             </blockquote>
             <button
-              className="btn btn-sm btn-outline-success position-absolute top-0 start-50 translate-middle border-0"
+              className="btn btn-sm btn-outline-primary position-absolute top-0 start-50 translate-middle border-0"
               onClick={getRandomProverb}
             >
-              <FontAwesomeIcon icon='shuffle' size="xl" />
+              <FontAwesomeIcon icon='dice' size="xl" />
             </button>
           </figure>
         )

@@ -1,6 +1,6 @@
 import './App.css';
-//import '../node_modules/bootswatch/dist/zephyr/bootstrap.css';
-import '../node_modules/bootstrap/dist/css/bootstrap.css'
+import '../node_modules/bootswatch/dist/lumen/bootstrap.css';
+//import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import '../node_modules/bootstrap/dist/js/bootstrap';
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
@@ -14,7 +14,7 @@ import { properties as p } from './data/properties';
 import Statistics from './components/Statistics';
 import MainSection from './components/MainSection';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faShuffle, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faDice, faDiceSix, faShuffle, faStar } from '@fortawesome/free-solid-svg-icons';
 
 const navItems = [
   {
@@ -33,7 +33,7 @@ const navItems = [
 
 function App() {
 
-  library.add(faShuffle, faStar);
+  library.add(faShuffle, faStar, faDice, faDiceSix);
 
   return (
     <div className="App vh-100 d-flex flex-column">

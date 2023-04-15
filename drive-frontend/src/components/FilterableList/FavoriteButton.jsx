@@ -39,7 +39,7 @@ function FavoriteButton(props) {
   }
 
   const getButtonCssClasses = () => {
-    const defaultClasses = 'position-absolute bottom-50 end-0 d-xxl-block d-none border-0';
+    const defaultClasses = 'position-absolute top-50 end-0 translate-middle-y border-0';
     return props.proverb.favorite ? `${defaultClasses} btn btn-outline-warning` : `${defaultClasses} btn btn-outline-secondary`;
   }
 

@@ -51,7 +51,7 @@ function FilterableList() {
       { isError && (<div className="alert alert-danger" role='alert'>An error occurred.</div>) }
       {
         isLoading ? (
-          <div className="spinner-border text-info" role="status">
+          <div className="spinner-grow text-info" role="status">
             <span className="visually-hidden">Loading...</span>
           </div>
         ) : (

@@ -3,6 +3,7 @@ package com.fjebernas.drive.controller;
 import com.fjebernas.drive.model.Proverb;
 import com.fjebernas.drive.service.ProverbService;
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,16 +11,13 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+@AllArgsConstructor
 @CrossOrigin
 @RequestMapping("${serverBaseUrl}/proverbs")
 @RestController
 public class ProverbController {
 
   private final ProverbService proverbService;
-
-  public ProverbController(ProverbService proverbService) {
-    this.proverbService = proverbService;
-  }
 
   @ResponseStatus(HttpStatus.OK)
   @GetMapping("/")

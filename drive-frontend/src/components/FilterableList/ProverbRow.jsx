@@ -9,7 +9,7 @@ function ProverbRow(props) {
   }
 
   const getProverbCssClasses = (isFavorite) => {
-    const defaultClasses = 'btn btn-link fs-4 py-3 text-decoration-none text-dark';
+    const defaultClasses = 'btn btn-link fs-4 py-3 text-decoration-none text-dark w-75';
     return isFavorite ? `${defaultClasses} fw-bold` : defaultClasses;
   }
 
@@ -20,7 +20,7 @@ function ProverbRow(props) {
           {props.proverb.content}
         </button>
         <figcaption className="blockquote-footer">
-          <cite title="source-title">{props.proverb.country}</cite>
+          <cite title="Country">{props.proverb.country}</cite>
         </figcaption>
       </blockquote>
       

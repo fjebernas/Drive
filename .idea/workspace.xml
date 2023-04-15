@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7f7c3fb2-294d-4cf3-b215-6ce9fcb28069" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/drive-frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/drive-frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drive-frontend/src/components/FilterableList/FavoriteButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/drive-frontend/src/components/FilterableList/FavoriteButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drive-frontend/src/components/FilterableList/FilterableList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/drive-frontend/src/components/FilterableList/FilterableList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drive-frontend/src/components/FilterableList/ProverbRow.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/drive-frontend/src/components/FilterableList/ProverbRow.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drive-frontend/src/components/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/drive-frontend/src/components/Footer/Footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drive-frontend/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/drive-frontend/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drive-frontend/src/components/RandomProverb/RandomProverb.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/drive-frontend/src/components/RandomProverb/RandomProverb.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drive/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/drive/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2OHiN52VW25ASoaQm9UndeJM2fh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7f7c3fb2-294d-4cf3-b215-6ce9fcb28069" name="Changes" comment="" />
+      <created>1681223864452</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681223864452</updated>
+    </task>
+    <servers />
+  </component>
+</project>
